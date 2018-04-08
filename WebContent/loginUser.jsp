@@ -16,7 +16,7 @@
 %>
 <%
 	try {
-
+		//test merge
 		//Get the database connection
 		Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://cs336projectlogindb.cocvlvd1pff0.us-east-1.rds.amazonaws.com/cs336ProjectLoginDb?" +
