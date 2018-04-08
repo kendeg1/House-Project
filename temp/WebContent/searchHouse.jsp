@@ -19,7 +19,11 @@
 <meta charset="ISO-8859-1">
 <title>Search for housing</title>
 </head>
-
+	<div>                
+  <ul class="pager">
+    <li class="previous"><a href="login.jsp">Login Page</a></li>
+  </ul>
+</div>  
 <body class="bg-info">
 
 <!-- 6 houses on cover  -->
@@ -46,16 +50,71 @@
 				});
 			</script>
 <!-- Login -->
-			<div>
-				<ul class="pager">
-					<li class="login"><a href="login.jsp">Login Page</a></li>
-				</ul>
+
+	<div id="buySell" class="text-center" >
+			<input type="checkbox" id="buy" value="buy">Buy
+			<input type="checkbox" id="sell" value="rent">Rent
 			</div>
-			
-			
-			<div id="buySell">
-				<input type="radio" name="id" value="buy" >Buy 
-				<input type="radio" name="id" value="rent">Rent
+			<div id=duration style="display:none"><p>Select Renting Duration</p>
+					<label for="day">Days</label><select id="day" required>
+				      <option value="00">00</option>
+					  <option value="01">01</option>
+  					  <option value="02">02</option>
+					  <option value="03">03</option>
+					  <option value="04">04</option>
+					  <option value="05">05</option>
+					  <option value="06">06</option>
+					  <option value="07">07</option>
+					  <option value="08">08</option>
+					  <option value="09">09</option>
+					  <option value="10">10</option>
+					  <option value="11">11</option>
+					  <option value="12">12</option>
+					  <option value="13">13</option>
+					  <option value="14">14</option>
+					  <option value="15">15</option>
+					  <option value="16">16</option>
+					  <option value="17">17</option>
+					  <option value="18">18</option>
+					  <option value="19">19</option>
+					  <option value="20">20</option>
+					  <option value="21">21</option>
+					  <option value="22">22</option>
+					  <option value="23">23</option>
+					  <option value="24">24</option>
+					  <option value="25">25</option>
+					  <option value="26">26</option>
+					  <option value="27">27</option>
+					  <option value="28">28</option>
+					  <option value="29">29</option>
+					  <option value="30">30</option>
+					  <option value="31">31</option>
+				</select>
+				
+				<label for="month">Months</label><select id="month" required>
+					  <option value="00">00</option>
+					  <option value="01">01</option>
+  					  <option value="02">02</option>
+					  <option value="03">03</option>
+					  <option value="04">04</option>
+					  <option value="05">05</option>
+					  <option value="06">06</option>
+					  <option value="07">07</option>
+					  <option value="08">08</option>
+					  <option value="09">09</option>
+					  <option value="10">10</option>
+					  <option value="11">11</option>
+					  <option value="12">12</option>
+				</select>
+				
+				<label for="year">Years</label><select id="year" required>
+					  <option value="00">00</option>
+					  <option value="01">01</option>
+  					  <option value="02">02</option>
+					  <option value="03">03</option>
+					  <option value="04">04</option>
+					  <option value="05">05</option>
+				</select>
 			</div>
 
 			<div id=house></div>
