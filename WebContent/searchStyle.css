@@ -1,0 +1,22 @@
+@charset "ISO-8859-1";
+#login{
+	margin-left:auto; 
+	margin-right:0;
+}
+
+.login{
+	margin: auto;
+}
+#six{
+	margin-top:10px;
+	margin-bottom:10px;
+}
+#title {
+    color:forestgreen;
+}
+#checker {
+	margin-top: 10px;
+}
+#checkboxes{
+    color:forestgreen;
+}
