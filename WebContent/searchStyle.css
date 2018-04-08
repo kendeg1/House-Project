@@ -20,3 +20,34 @@
 #checkboxes{
     color:forestgreen;
 }
+body {
+    font-family: "Lato", sans-serif;
+}
+
+#rooms{
+	display:inline-block;
+    margin-right:10px;
+}
+#bathrooms{
+	display:inline-block;
+}
+#guests{
+	display:inline-block;
+}
+.center {
+ text-align: center;   
+}
+
+.merge-bottom-input {
+  width: 67px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.merge-top-left-button {
+  border-top-left-radius: 0;
+}
+
+.merge-top-right-button {
+  border-top-right-radius: 0;
+}
