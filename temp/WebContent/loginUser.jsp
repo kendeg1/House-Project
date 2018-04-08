@@ -28,7 +28,7 @@
 		
 		
 		String username = request.getParameter("username").toLowerCase();
-		String pw = request.getParameter("password");
+		String pw = request.getParameter("pw");
 		if(pw.equals("")||username.equals("")||pw.equals(null)||username.equals(null)){
 			response.sendRedirect("error.jsp");
 			con.close();
@@ -38,7 +38,7 @@
 		//changed string.format to prepared statement
 		/*String str = String.format("SELECT * FROM user WHERE username = '%s' AND pw='%s'",username,pw);
 		out.println(str);*/
-		String str = "SELECT * FROM Users WHERE username = ? AND `password`=?";
+		String str = "SELECT * FROM user WHERE username = ? AND pw=?";
 		PreparedStatement query = con.prepareStatement(str);
 		query.setString(1,username);
 		query.setString(2,pw);
@@ -49,7 +49,7 @@
 		ResultSet result = query.executeQuery();
 		if(result.next()){
 			dbUsername=result.getString("username");
-			dbPassword=result.getString("password");
+			dbPassword=result.getString("pw");
 			if(username.equals(dbUsername)&&pw.equals(dbPassword)){
 				session.setAttribute("username",dbUsername);
 				session.setAttribute("password",dbPassword);

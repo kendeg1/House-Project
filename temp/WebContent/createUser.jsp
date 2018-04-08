@@ -13,6 +13,18 @@
   <title>Create User</title>
 </head>
  <body class="bg-info">
+ <nav class="navbar navbar-default">
+ 	<div class="navbar-header">
+ 		<a class="navbar-brand" href="searchHouse.jsp">Housing in New Brunswick</a>
+ 	</div>
+ 	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+ 		<ul class="nav navbar-nav">
+ 			<li><a href="searchHouse.jsp">Main</a></li>
+ 			<li><a href="buy.jsp">Buy Page</a>
+ 		</ul>
+ 		
+ 	</div>	
+ </nav>
  <div class="container">
   	<form method="post" action="createAttempt.jsp">
   	<b>Username</b>

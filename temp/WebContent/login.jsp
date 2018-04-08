@@ -14,6 +14,21 @@
   <title>Login Page</title>
 </head>
  <body class="text-center bg-info ">
+  <nav class="navbar navbar-default">
+ 	<div class="navbar-header">
+ 		<a class="navbar-brand" href="searchHouse.jsp">Housing in New Brunswick</a>
+ 	</div>
+ 	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+ 		<ul class="nav navbar-nav">
+ 			<li><a href="searchHouse.jsp">Main</a></li>
+ 			<li><a href="buy.jsp">Buy Page</a>
+ 		</ul>
+ 		
+ 	</div>	
+ </nav>
+ 
+ 
+ 
   <div class="avatar">
     <img src="http://www.york.ca/wps/wcm/connect/yorkpublic/7f496162-920a-4109-9058-7dc6451eec49/Housing_icon.jpg?MOD=AJPERES&CACHEID=7f496162-920a-4109-9058-7dc6451eec49" alt="img">
   </div>
@@ -27,7 +42,7 @@
     </div>
     <div class="input-group">
       <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-      <input type="password" class="form-control" name="password" placeholder="Enter Password">
+      <input type="password" class="form-control" name="pw" placeholder="Enter Password">
     </div>
     <br>
     <button class="btn btn-info active" type="submit" value="submit">Login</button>	
