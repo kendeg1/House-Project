@@ -41,7 +41,7 @@
 			<script type="text/javascript">
 				$(document).ready(function() {
 					$('#checker').click(function() {
-						checked = $("input[type=radio]:checked").length;
+						checked = $("input[type=checkbox]:checked").length;
 						if (!checked) {
 							alert("You must choose buy or rent.");
 							return false;
@@ -117,6 +117,8 @@
 				</select>
 			</div>
 
+		
+		
 			<div id=house></div>
 
 			<button class="btn btn-primary active" id="checker" type="submit">Search</button>
