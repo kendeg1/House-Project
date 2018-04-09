@@ -31,36 +31,42 @@
 <body>
 	<%
 		String username = null;
-		if (session.getAttribute("username") != null){
-			username = (String) session.getAttribute("username");
-		}
-		if (username == null){
-			PrintWriter script = response.getWriter();
-			script.println("<script>");
-			script.println("alert('You need to Login')");
-			script.println("location.href = 'login.jsp'");
-			script.println("</script>");
-		}
-		else{
-			BbsDAO bbsDAO = new BbsDAO();
-			int result = bbsDAO.write(username, bbs.getType(), bbs.getCondition(), bbs.getRoom_count(), bbs.getBathroom_count(), 
-					bbs.getAdditional_notes());
-			if (result == -1){
+			if (session.getAttribute("username") != null){
+		username = (String) session.getAttribute("username");
+			}
+			if (username == null){
+		PrintWriter script = response.getWriter();
+		script.println("<script>");
+		script.println("alert('You need to Login')");
+		script.println("location.href = 'login.jsp'");
+		script.println("</script>");
+			}
+		else {
+			if (bbs.getType() == null || bbs.getCondition() == 0 || bbs.getRoom_count() == 0
+					|| bbs.getBathroom_count() == 0 || bbs.getAdditional_notes() == null) {
 				PrintWriter script = response.getWriter();
 				script.println("<script>");
-				script.println("alert('Failed to make a post')");
+				script.println("alert('Post is incomplete')");
 				script.println("history.back()");
 				script.println("</script>");
-			}
-			else{
-				PrintWriter script = response.getWriter();
-				script.println("<script>");
-				script.println("location.href = 'bbs.jsp'");
-				script.println("</script>");
+			} else {
+				BbsDAO bbsDAO = new BbsDAO();
+				int result = bbsDAO.write(username, bbs.getType(), bbs.getCondition(), bbs.getRoom_count(),
+						bbs.getBathroom_count(), bbs.getAdditional_notes());
+				if (result == -1) {
+					PrintWriter script = response.getWriter();
+					script.println("<script>");
+					script.println("alert('Failed to make a post')");
+					script.println("history.back()");
+					script.println("</script>");
+				} else {
+					PrintWriter script = response.getWriter();
+					script.println("<script>");
+					script.println("location.href = 'bbs.jsp'");
+					script.println("</script>");
+				}
 			}
 		}
-	
-	
 	%>
 
 </body>
