@@ -20,7 +20,7 @@
  	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
  		<ul class="nav navbar-nav">
  			<li><a href="searchHouse.jsp">Main</a></li>
- 			<li><a href="buy.jsp">Buy Page</a>
+ 			<li><a href="buy.jsp">Board</a>
  		</ul>
  		
  	</div>	

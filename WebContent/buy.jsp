@@ -35,8 +35,8 @@
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li><a href="searchHouse.jsp">Main Page</a></li>
-				<li class="active"><a href="buy.jsp">Board Page</a></li>
+				<li><a href="searchHouse.jsp">Main</a></li>
+				<li class="active"><a href="buy.jsp">Board</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
