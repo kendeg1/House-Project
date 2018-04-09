@@ -17,7 +17,7 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" href="write.css">
-<title>Buy Page</title>
+<title>Board Page</title>
 </head>
 
 <body>
@@ -35,7 +35,7 @@
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
 				<li><a href="searchHouse.jsp">Main Page</a></li>
-				<li class="active"><a href="buy.jsp">Buy Page</a></li>
+				<li class="active"><a href="buy.jsp">Board Page</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
