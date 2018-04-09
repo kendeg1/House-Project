@@ -55,10 +55,8 @@
 		ResultSet result = query.executeQuery();
 		if(result.next()){
 			dbUsername=result.getString("username");
-			dbPassword=result.getString("password");
-			if(username.equals(dbUsername)&&pw.equals(dbPassword)){
+			if(username.equals(dbUsername)){
 				session.setAttribute("username",dbUsername);
-				session.setAttribute("password",dbPassword);
 				response.sendRedirect("welcome.jsp");
 			}
 			else{
