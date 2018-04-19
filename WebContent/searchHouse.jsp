@@ -43,7 +43,7 @@
 		
 		
 <!-- Popup for Search -->
-			<form class="" id="search" method="get" action="#">
+			<form class="" id="search" method="get" action="buy.jsp">
 			<script type="text/javascript">
 				$(document).ready(function() {
 					$('#checker').click(function() {
@@ -58,11 +58,11 @@
 <!-- Login -->
 
 	<div id="buySell" class="text-center form-check" >
-			<input type="checkbox" id="buy" value="buy">Buy
-			<input type="checkbox" id="sell" value="rent">Rent
+			<input name="selection" type="radio" id="buy" value="buy">Buy
+			<input name="selection" type="radio" id="sell" value="rent">Rent
 			</div>
-			<div id=duration style="display:none"><p>Select Renting Duration</p>
-					<label for="day">Days</label><select form="search" id="day" required>
+			<div id=duration><p>If Renting, Select Renting Duration</p>
+					<label for="day">Days</label><select name="day" form="search" id="day" required>
 				      <option value="00">00</option>
 					  <option value="01">01</option>
   					  <option value="02">02</option>
@@ -97,7 +97,7 @@
 					  <option value="31">31</option>
 				</select>
 				
-				<label for="month">Months</label><select form="search" id="month" required>
+				<label for="month">Months</label><select name="month" form="search" id="month" required>
 					  <option value="00">00</option>
 					  <option value="01">01</option>
   					  <option value="02">02</option>
@@ -121,10 +121,26 @@
 					  <option value="04">04</option>
 					  <option value="05">05</option>
 				</select>
+				
+				<div id="listing_type" >
+				<label class="radio-inline">
+  				<input type="radio" name="listing_type" id="apartment" value="apartment" required>Apartment
+				</label>
+				<label class="radio-inline">
+  				<input type="radio" name="listing_type" id="hotel" value="hotel" required>Hotel
+				</label>
+				<label class="radio-inline">
+  				<input type="radio" name="listing_type" id="room" value="room" required>Room
+				</label>
+				<label class="radio-inline">
+  				<input type="radio" name="listing_type" id="house" value="house" required>House
+				</label>
+			</div>		
+				
 			</div>
 			<br>
 			<div class="row form-check form-check-inline" id=rooms ><p>Number of rooms</p>
-				<label class="col-md-4" for="rooms"></label><select name = "rooms" form="search" id="room_count" required>
+				<label class="col-md-4" for="rooms"></label><select name = "room_count" form="search" id="room_count" required>
 					  <option value="00">00</option>
 					  <option value="01">01</option>
   					  <option value="02">02</option>
@@ -140,7 +156,7 @@
 			</div>
 			
 			<div id=bathrooms><p>Number of bathrooms</p>
-				<label  for="bathrooms"></label><select name="bathrooms" form="search" id="bathroom_count" required>
+				<label  for="bathrooms"></label><select name="bathroom_count" form="search" id="bathroom_count" required>
 					  <option value="00">00</option>
 					  <option value="01">01</option>
   					  <option value="02">02</option>
@@ -156,7 +172,7 @@
 			</div>
 			
 			<div id=guests><p>Number of guests</p>
-			<label for="guests"></label><select name=guests form="search" id="guest_count" required>
+			<label for="guests"></label><select name=guests_count form="search" id="guest_count" required>
 					  <option value="00">00</option>
 					  <option value="01">01</option>
   					  <option value="02">02</option>
@@ -175,16 +191,16 @@
 			<div id="price" class="form-check form-check-inline">
 			<h3>Price</h3>
 				<label class="col-2 col-form-label" for="minmax">
-				<input class="form-control" id="minCost" type="text" name = "minPrice" placeholder="Enter Minimum Price" required><b>To</b>
-				<input class="form-control" id="maxCost" type="text" name = "maxPrice" placeholder="Enter Maximum Price" required>
+				<input class="form-control" id="minCost" type="text" name = "minCost" placeholder="Enter Minimum Price" required><b>To</b>
+				<input class="form-control" id="maxCost" type="text" name = "maxCost" placeholder="Enter Maximum Price" required>
 				</label>
 			</div>
 			
 			<div id="crime" class="form-check form-check-inline">
 			<h3>Crime Rate</h3><p>Enter crime rate 1-10 10 being worst</p>
 				<label for="crime"></label>
-				<input class="text-muted" type="text" name = "minPrice" placeholder="Minimum Crime Rate" ><b>To</b>
-				<input class="text-muted" type="text" name = "maxPrice" placeholder="Maximum Crime Rate" >
+				<input class="text-muted" type="text" name = "minCrime" placeholder="Minimum Crime Rate" ><b>To</b>
+				<input class="text-muted" type="text" name = "maxCrime" placeholder="Maximum Crime Rate" >
 			</div>
 			
 			<div id="rating">
