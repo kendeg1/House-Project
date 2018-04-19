@@ -26,7 +26,7 @@
 		<h1 id="title" class="text-center">Sell housing in New Brunswick</h1>
 		<p>Are you looking to sell or rent?</p>
 	
-	<form class="form-inline" id="search" method="get" action="#">
+	<form class="form-inline" id="search" method="get" action="createListing.jsp">
 			<script type="text/javascript">
 				$(document).ready(function() {
 					$('#checker').click(function() {
@@ -164,7 +164,7 @@
 			
 			
 			<div id=bathrooms><p>Number of bathrooms</p>
-				<label  for="bathrooms"></label><select name="bathrooms" form="search" id="bathroom_count" required>
+				<label name="bathroom_count"  for="bathrooms"></label><select name="bathrooms" form="search" id="bathroom_count" required>
 					  <option value="00">00</option>
 					  <option value="01">01</option>
   					  <option value="02">02</option>
@@ -250,7 +250,7 @@
 			
 			
 			<div class="col-md-4 text-center mb-3">
-			<button class="btn  btn-success active" id="checker" type="submit">Finish</button>
+			<button class="btn  btn-success active" id="checker" type="submit" value="submit">Submit</button>
 			</div>	
 	</form>
 	</div>
