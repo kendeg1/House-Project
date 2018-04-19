@@ -175,16 +175,16 @@
 			<div id="price" class="form-check form-check-inline">
 			<h3>Price</h3>
 				<label class="col-2 col-form-label" for="minmax">
-				<input class="form-control" id="minCost" type="text" name = "minPrice" placeholder="Enter Minimum Price"><b>To</b>
-				<input class="form-control" id="maxCost" type="text" name = "maxPrice" placeholder="Enter Maximum Price">
+				<input class="form-control" id="minCost" type="text" name = "minPrice" placeholder="Enter Minimum Price" required><b>To</b>
+				<input class="form-control" id="maxCost" type="text" name = "maxPrice" placeholder="Enter Maximum Price" required>
 				</label>
 			</div>
 			
 			<div id="crime" class="form-check form-check-inline">
 			<h3>Crime Rate</h3><p>Enter crime rate 1-10 10 being worst</p>
 				<label for="crime"></label>
-				<input class="text-muted" type="text" name = "minPrice" placeholder="Minimum Crime Rate" required><b>To</b>
-				<input class="text-muted" type="text" name = "maxPrice" placeholder="Maximum Crime Rate" required>
+				<input class="text-muted" type="text" name = "minPrice" placeholder="Minimum Crime Rate" ><b>To</b>
+				<input class="text-muted" type="text" name = "maxPrice" placeholder="Maximum Crime Rate" >
 			</div>
 			
 			<div id="rating">

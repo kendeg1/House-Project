@@ -32,7 +32,7 @@
 					$('#checker').click(function() {
 						checked = $("input[type=checkbox]:checked").length;
 						if (!checked) {
-							alert("You must choose buy or rent.");
+							alert("You must choose sell or rent.");
 							return false;
 						}
 					});
@@ -108,15 +108,15 @@
 				</select>
 				
 				<br>
-			<div id="listing_type">
+			<div id="listing_type" >
 				<label class="radio-inline">
-  				<input type="radio" name="inlineRadioOptions" id="apartment" value="option1">Apartment
+  				<input type="radio" name="inlineRadioOptions" id="apartment" value="option1" required>Apartment
 				</label>
 				<label class="radio-inline">
-  				<input type="radio" name="inlineRadioOptions" id="hotel" value="option2">Hotel
+  				<input type="radio" name="inlineRadioOptions" id="hotel" value="option2" required>Hotel
 				</label>
 				<label class="radio-inline">
-  				<input type="radio" name="inlineRadioOptions" id="room" value="option3">Room
+  				<input type="radio" name="inlineRadioOptions" id="room" value="option3" required>Room
 				</label>
 			</div>		
 			</div>
@@ -133,9 +133,9 @@
 			<div id="homeAddress" class="form-group row">
   				<label for="homeAddress" class="col-2 col-form-label" required>Property Address</label>
   				<div class="col-10">
-    				<input type="text" class="form-control" id="address" placeholder="Enter Address">
-    				<input type="text" class="form-control" id="city" placeholder="Enter City">
-    				<input type="text" class="form-control" id="state" placeholder="Enter State">
+    				<input type="text" class="form-control" id="address" placeholder="Enter Address" required>
+    				<input type="text" class="form-control" id="city" placeholder="Enter City" required>
+    				<input type="text" class="form-control" id="state" placeholder="Enter State" required>
   				</div>
   			</div>
   			
@@ -230,7 +230,7 @@
 			<div id="cost" class="form-group row">
   				<label for="cost" class="col-2 col-form-label" required><h3>Price</h3></label>
   				<div class="col-10">
-    				<input type="text" class="form-control" id="cost" placeholder="Enter Price">
+    				<input type="text" class="form-control" id="cost" placeholder="Enter Price" required>
   				</div>
   			</div>
 			<br><br>
