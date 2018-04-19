@@ -57,8 +57,8 @@
 	
 
 	<div id="buySell" class="text-center form-check" >
-			<input name = "selection" type="radio" id="sell" value="buy">Sell
-			<input name = "selection" type="radio" id="rent" value="rent">Rent
+			<input name = "selection" type="radio" id="sell" value="True">Sell
+			<input name = "selection" type="radio" id="rent" value="False">Rent
 			</div>
 			<div id=duration style="display:none" ><p>If Renting, Select Renting Duration</p>
 					<label for="day">Days</label><select name="day" form="search" id="day" required>
@@ -154,7 +154,7 @@
 			<br>
 			
 			<div id="rooms" ><p>Number of rooms</p>
-				<label class="col-md-4" for="rooms"></label><select name = "rooms" form="search" id="room_count" required>
+				<label class="col-md-4" for="rooms"></label><select name = "room_count" form="search" id="room_count" required>
 					  <option value="00">00</option>
 					  <option value="01">01</option>
   					  <option value="02">02</option>
@@ -186,7 +186,7 @@
 			</div>
 			
 			<div id="guests"><p>Number of guests</p>
-			<label name="guests_count" for="guests"></label><select name="guests_count" form="search" id="guests_count" required>
+			<label name="guest_count" for="guests"></label><select name="guest_count" form="search" id="guest_count" required>
 					  <option value="00">00</option>
 					  <option value="01">01</option>
   					  <option value="02">02</option>
@@ -238,7 +238,7 @@
 			<div id="size" class="form-group row">
   				<label for="size" class="col-2 col-form-label" required><h3>Square Feet</h3></label>
   				<div class="col-10">
-    				<input name="size" type="text" class="form-control" id="size_square_feet" placeholder="Enter Size">
+    				<input name="size_square_feet" type="text" class="form-control" id="size_square_feet" placeholder="Enter Size">
   				</div>
   			</div>
 			
