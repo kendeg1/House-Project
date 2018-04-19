@@ -35,8 +35,8 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link rel="stylesheet" type="text/css" href="buy.css">
-<title>Board</title>
+<link rel="stylesheet" type="text/css" href="userInfo.css">
+<title>User Info</title>
 </head>
 <body>
 	<nav class="navbar navbar-default">
@@ -54,7 +54,7 @@
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
 				<li><a href="searchHouse.jsp">Main</a></li>
-				<li class="active"><a href="buy.jsp">Board</a></li>
+				<li class="active"><a href="userInfo.jsp">User Info</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li class="dropdown"><a href="#" class="dropdown-toggle"

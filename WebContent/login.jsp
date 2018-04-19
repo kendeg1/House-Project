@@ -21,7 +21,7 @@
  	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
  		<ul class="nav navbar-nav">
  			<li><a href="searchHouse.jsp">Main</a></li>
- 			<li><a href="buy.jsp">Board</a>
+ 			<li><a href="userInfo.jsp">User Info</a>
  		</ul>
  		
  	</div>	
