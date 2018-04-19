@@ -39,15 +39,28 @@
 					});
 				});
 			</script>
+			<script>
+			$(document).ready(function() {
+				   $('input[name="selection"]').click(function() {
+				       if($(this).attr('id') == 'rent') {
+				            $('#duration').show();           
+				       }
+
+				       else {
+				            $('#duration').hide();   
+				       }
+				   });
+				});
+			</script>
 <!-- Login -->
 
 	
 
 	<div id="buySell" class="text-center form-check" >
-			<input name = "selection" type="radio" id="sell" value="buy">Sell
-			<input name = "selection" type="radio" id="rent" value="rent">Rent
+			<input name = "selection" type="radio" id="sell" value="True">Sell
+			<input name = "selection" type="radio" id="rent" value="False">Rent
 			</div>
-			<div id=duration ><p>If Renting, Select Renting Duration</p>
+			<div id=duration style="display:none" ><p>If Renting, Select Renting Duration</p>
 					<label for="day">Days</label><select name="day" form="search" id="day" required>
 				      <option value="00">00</option>
 					  <option value="01">01</option>
@@ -111,16 +124,16 @@
 				<br>
 			<div id="listing_type" >
 				<label class="radio-inline">
-  				<input type="radio" name="listing_type" id="apartment" value="apartment" required>Apartment
+  				<input type="radio" name="listing_type" id="apartment" value="apartment">Apartment
 				</label>
 				<label class="radio-inline">
-  				<input type="radio" name="listing_type" id="hotel" value="hotel" required>Hotel
+  				<input type="radio" name="listing_type" id="hotel" value="hotel">Hotel
 				</label>
 				<label class="radio-inline">
-  				<input type="radio" name="listing_type" id="room" value="room" required>Room
+  				<input type="radio" name="listing_type" id="room" value="room">Room
 				</label>
 				<label class="radio-inline">
-  				<input type="radio" name="listing_type" id="house" value="house" required>House
+  				<input type="radio" name="listing_type" id="house" value="house">House
 				</label>
 			</div>		
 			</div>
@@ -141,7 +154,7 @@
 			<br>
 			
 			<div id="rooms" ><p>Number of rooms</p>
-				<label class="col-md-4" for="rooms"></label><select name = "rooms" form="search" id="room_count" required>
+				<label class="col-md-4" for="rooms"></label><select name = "room_count" form="search" id="room_count" required>
 					  <option value="00">00</option>
 					  <option value="01">01</option>
   					  <option value="02">02</option>
@@ -173,7 +186,7 @@
 			</div>
 			
 			<div id="guests"><p>Number of guests</p>
-			<label name="guests_count" for="guests"></label><select name="guests_count" form="search" id="guests_count" required>
+			<label name="guest_count" for="guests"></label><select name="guest_count" form="search" id="guest_count" required>
 					  <option value="00">00</option>
 					  <option value="01">01</option>
   					  <option value="02">02</option>
@@ -225,7 +238,7 @@
 			<div id="size" class="form-group row">
   				<label for="size" class="col-2 col-form-label" required><h3>Square Feet</h3></label>
   				<div class="col-10">
-    				<input name="size" type="text" class="form-control" id="size_square_feet" placeholder="Enter Size">
+    				<input name="size_square_feet" type="text" class="form-control" id="size_square_feet" placeholder="Enter Size">
   				</div>
   			</div>
 			
