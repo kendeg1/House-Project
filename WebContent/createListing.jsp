@@ -25,13 +25,10 @@
 		//Create a SQL statement
 		Statement stmt = con.createStatement();
 		
-		//insert into Sellers
-		String st = "INSERT INTO Sellers(username,rating) VALUES ('asdf','')";
 		//crime_rate
 		
 		
 		//Seller_Listings
-		
 		
 		
 		String str = "INSERT INTO Seller_Listings(listing_id, username, room_count, bathroom_count, guests_count, min_cost, max_cost, listingType, duration, notes) VALUES (0, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
