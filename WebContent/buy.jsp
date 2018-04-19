@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1" import="com.cs336.pkg.*"%>
+    pageEncoding="ISO-8859-1"%>
+<%@ page import="java.io.*,java.util.*,java.sql.*"%>
+<%@ page import="javax.servlet.http.*,javax.servlet.*" %>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
@@ -7,14 +9,13 @@
 
 <%
 	String id = request.getParameter("userId");
-	String driverName = "com.mysql.jdbc.Driver";
-	String connectionUrl = "jdbc:mysql://cs336projectlogindb.cocvlvd1pff0.us-east-1.rds.amazonaws.com/cs336ProjectLoginDb?";
+	String connectionUrl = "jdbc:mysql://cs336projectlogindb.cocvlvd1pff0.us-east-1.rds.amazonaws.com:3306/?user=monkeyGroup";
 	String dbName = "monkeyGroup";
 	String userId = "monkeyGroup";
 	String password = "monkey123";
 
 	try {
-		Class.forName(driverName);
+		Class.forName("com.mysql.jdbc.Driver");
 	} catch (ClassNotFoundException e) {
 		e.printStackTrace();
 	}
@@ -32,16 +33,16 @@
 	</tr>
 	<tr bgcolor="#A52A2A">
 		<td><b>username</b></td>
-		<td><b>newUser</b></td>
-		<td><b>Password</b></td>
-		<td><b>Name</b></td>
-		<td><b>Email</b></td>
+		<td><b>pw</b></td>
+		<td><b>email</b></td>
+		<td><b>name</b></td>
+		<td><b>phone_number</b></td>
 	</tr>
 	<%
 		try {
 			connection = DriverManager.getConnection(connectionUrl + dbName, userId, password);
 			statement = connection.createStatement();
-			String sql = "SELECT * FROM record";
+			String sql = "SELECT * FROM Users";
 
 			resultSet = statement.executeQuery(sql);
 			while (resultSet.next()) {
@@ -49,16 +50,16 @@
 	<tr bgcolor="#DEB887">
 
 		<td><%=resultSet.getString("username")%></td>
-		<td><%=resultSet.getString("newUser")%></td>
-		<td><%=resultSet.getString("password")%></td>
-		<td><%=resultSet.getString("name")%></td>
+		<td><%=resultSet.getString("pw")%></td>
 		<td><%=resultSet.getString("email")%></td>
+		<td><%=resultSet.getString("name")%></td>
+		<td><%=resultSet.getString("phone_number")%></td>
 
 	</tr>
 
 	<%
 		}
-
+connection.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
