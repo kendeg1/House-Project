@@ -7,8 +7,8 @@
 <%
 	String id = request.getParameter("userid");
 	String driver = "com.mysql.jdbc.Driver";
-	String connectionUrl = "jdbc:mysql://cs336projectlogindb.cocvlvd1pff0.us-east-1.rds.amazonaws.com:3306/?user=monkeyGroup/";
-	String database = "monkeyGroup";
+	String connectionUrl = "jdbc:mysql://cs336projectlogindb.cocvlvd1pff0.us-east-1.rds.amazonaws.com/";
+	String database = "cs336ProjectLoginDb";
 	String userid = "monkeyGroup";
 	String password = "monkey123";
 	try {
@@ -43,7 +43,7 @@
 		%>
 		<tr>
 			<td><%=resultSet.getString("username")%></td>
-			<td><%=resultSet.getString("pw")%></td>
+			<td><%=resultSet.getString("password")%></td>
 			<td><%=resultSet.getString("email")%></td>
 			<td><%=resultSet.getString("name")%></td>
 			<td><%=resultSet.getString("phone_number")%></td>
