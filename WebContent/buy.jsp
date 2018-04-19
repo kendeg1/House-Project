@@ -32,11 +32,11 @@
 
 	</tr>
 	<tr bgcolor="#A52A2A">
-		<td><b>username</b></td>
-		<td><b>pw</b></td>
-		<td><b>email</b></td>
-		<td><b>name</b></td>
-		<td><b>phone_number</b></td>
+		<td><b>Username</b></td>
+		<td><b>Password</b></td>
+		<td><b>Email</b></td>
+		<td><b>Name</b></td>
+		<td><b>Phone Number</b></td>
 	</tr>
 	<%
 		try {
