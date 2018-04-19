@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1" import="com.cs336.pkg.*"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
@@ -31,8 +31,8 @@
 
 	</tr>
 	<tr bgcolor="#A52A2A">
-		<td><b>id</b></td>
-		<td><b>user_id</b></td>
+		<td><b>username</b></td>
+		<td><b>newUser</b></td>
 		<td><b>Password</b></td>
 		<td><b>Name</b></td>
 		<td><b>Email</b></td>
@@ -48,8 +48,8 @@
 	%>
 	<tr bgcolor="#DEB887">
 
-		<td><%=resultSet.getString("id")%></td>
-		<td><%=resultSet.getString("user_id")%></td>
+		<td><%=resultSet.getString("username")%></td>
+		<td><%=resultSet.getString("newUser")%></td>
 		<td><%=resultSet.getString("password")%></td>
 		<td><%=resultSet.getString("name")%></td>
 		<td><%=resultSet.getString("email")%></td>
