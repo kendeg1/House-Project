@@ -18,6 +18,7 @@
 <meta charset="ISO-8859-1">
 <title>Seller Page</title>
 </head>
+
 <body class="bg-info">
 	<div class="text-center container-fluid">
 		<img class="img-responsive img-rounded center-block" id ="six"
@@ -123,14 +124,8 @@
 				</label>
 			</div>		
 			</div>
+			
 			<br>
-
-  		<!--  	<div id="username" class="form-group row">
-  				<label for="username" class="col-2 col-form-label" required>Username</label>
-  				<div class="col-10">
-    				<input type="text" class="form-control" id="username" placeholder="Enter Username">
-  				</div>
-  			</div> -->
 			<br>
 			
 			<div id="homeAddress" class="form-group row">
@@ -144,7 +139,8 @@
   			
   			<br>
 			<br>
-			<div class="row form-check form-check-inline" id="rooms" ><p>Number of rooms</p>
+			
+			<div id="rooms" ><p>Number of rooms</p>
 				<label class="col-md-4" for="rooms"></label><select name = "rooms" form="search" id="room_count" required>
 					  <option value="00">00</option>
 					  <option value="01">01</option>
@@ -160,10 +156,7 @@
 				</select>
 			</div>
 			
-		
-			
-			
-			<div id=bathrooms><p>Number of bathrooms</p>
+			<div id="bathrooms"><p>Number of bathrooms</p>
 				<label name="bathroom_count"  for="bathrooms"></label><select name="bathroom_count" form="search" id="bathroom_count" required>
 					  <option value="00">00</option>
 					  <option value="01">01</option>
@@ -179,7 +172,7 @@
 				</select>
 			</div>
 			
-			<div id=guests><p>Number of guests</p>
+			<div id="guests"><p>Number of guests</p>
 			<label name="guests_count" for="guests"></label><select name="guests_count" form="search" id="guests_count" required>
 					  <option value="00">00</option>
 					  <option value="01">01</option>
@@ -196,29 +189,36 @@
 			</div>
 			<br>
 			<br>
+			
 			<div id="amenities">
 			<h3>Amenities</h3>
-			<label class="checkbox-inline">
-  			<input type="checkbox" name="amenities" id="washer" value="option1">Washer/Dryer
-			</label>
-			<label class="checkbox-inline">
-  			<input type="checkbox" name="amenities" id="parking" value="option2">Covered Parking
-			</label>
-			<label class="checkbox-inline">
-  			<input type="checkbox" name="amenities" id="pets" value="option3">Pet Friendly
-			</label>
-			<label class="checkbox-inline">
-  			<input type="checkbox" name="amenities" id="ac" value="option3">Air-Conditioning
-			</label>
-			<label class="checkbox-inline">
-  			<input type="checkbox" name="amenities" id="wifi" value="option3">Wifi/High-Speed Internet
-			</label>
-			<label class="checkbox-inline">
-  			<input type="checkbox" name="amenities" id="gym" value="option2">Gym
-			</label>
-			<label class="checkbox-inline">
-  			<input type="checkbox" name="amenities" id="gate" value="option2">Gated Access
-			</label>
+				<label class="checkbox-inline">
+  					<input type="checkbox" name="amenities" id="washer" value="option1">Washer/Dryer
+				</label>
+			
+				<label class="checkbox-inline">
+  					<input type="checkbox" name="amenities" id="parking" value="option2">Covered Parking
+				</label>
+			
+				<label class="checkbox-inline">
+  					<input type="checkbox" name="amenities" id="pets" value="option3">Pet Friendly
+				</label>
+			
+				<label class="checkbox-inline">
+  					<input type="checkbox" name="amenities" id="ac" value="option3">Air-Conditioning
+				</label>
+			
+				<label class="checkbox-inline">
+  					<input type="checkbox" name="amenities" id="wifi" value="option3">Wifi/High-Speed Internet
+				</label>
+			
+				<label class="checkbox-inline">
+  					<input type="checkbox" name="amenities" id="gym" value="option2">Gym
+				</label>
+			
+				<label class="checkbox-inline">
+  					<input type="checkbox" name="amenities" id="gate" value="option2">Gated Access
+				</label>
 			</div>
 			<br>
 			
@@ -236,21 +236,16 @@
     				<input type="text" name="cost" class="form-control" id="cost" placeholder="Enter Price" required>
   				</div>
   			</div>
+  			
 			<br><br>
+			
 			<div id="notesBox" class="">
-			<label for="notesBox" class="col-2 col-form-label" required>Notes about<br> the property</label>
-			<textarea id="notes" name="notes" style="width:50%" class="form-control" rows="3"></textarea>
+				<label for="notesBox" class="col-2 col-form-label" required>Notes about<br> the property</label>
+				<textarea id="notes" name="notes" style="width:50%" class="form-control" rows="3"></textarea>
 			</div>
-			<!--  <div id="crime" class="form-check form-check-inline">
-			<h3>Crime Rate</h3><p>Enter crime rate 1-10</p>
-				<label for="crime"></label>
-				<input class="text-muted" type="text" name = "crimeRate" id="crameRate" placeholder="Crime Rate" required>
-				
-			</div>!  -->
-			
-			
+
 			<div class="col-md-4 text-center mb-3">
-			<button class="btn  btn-success active" id="checker" type="submit" value="submit">Submit</button>
+				<button class="btn  btn-success active" id="checker" type="submit" value="submit">Submit</button>
 			</div>	
 	</form>
 	</div>
