@@ -21,9 +21,6 @@
 		Class.forName("com.mysql.jdbc.Driver");
 		Connection con = DriverManager.getConnection("jdbc:mysql://cs336projectlogindb.cocvlvd1pff0.us-east-1.rds.amazonaws.com/cs336ProjectLoginDb?" +
 				                                   "user=monkeyGroup&password=monkey123");
-
-		//Create a SQL statement
-		Statement stmt = con.createStatement();
 		
 		//set parameters
 		//help from https://beginnersbook.com/2013/12/hashmap-in-java-with-example/

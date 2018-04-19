@@ -1,7 +1,7 @@
 /**
  * 
  */
-$('#mycheckbox').change(function(){
+/*$('#mycheckbox').change(function(){
             if(this.checked) {
                 $("mycheckboxdiv").next().show();
             } else {
@@ -16,5 +16,5 @@ $(document).ready(function(){
             $('#duration').fadeOut('slow');
 
     });
-});
+});*/
 
