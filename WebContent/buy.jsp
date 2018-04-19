@@ -1,70 +1,65 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<%@ page import="java.io.*,java.util.*,java.sql.*"%>
-<%@ page import="javax.servlet.http.*,javax.servlet.*" %>
+	pageEncoding="ISO-8859-1"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.Connection"%>
-
 <%
-	String id = request.getParameter("userId");
-	String connectionUrl = "jdbc:mysql://cs336projectlogindb.cocvlvd1pff0.us-east-1.rds.amazonaws.com:3306/?user=monkeyGroup";
-	String dbName = "monkeyGroup";
-	String userId = "monkeyGroup";
+	String id = request.getParameter("userid");
+	String driver = "com.mysql.jdbc.Driver";
+	String connectionUrl = "jdbc:mysql://cs336projectlogindb.cocvlvd1pff0.us-east-1.rds.amazonaws.com:3306/monkeyGroup";
+	String database = "monkeyGroup";
+	String userid = "monkeyGroup";
 	String password = "monkey123";
-
 	try {
-		Class.forName("com.mysql.jdbc.Driver");
+		Class.forName(driver);
 	} catch (ClassNotFoundException e) {
 		e.printStackTrace();
 	}
-
 	Connection connection = null;
 	Statement statement = null;
 	ResultSet resultSet = null;
 %>
-<h2 align="center">
-	<font><strong>Retrieve data from database in JSP</strong></font>
-</h2>
-<table align="center" cellpadding="5" cellspacing="5" border="1">
-	<tr>
+<!DOCTYPE html>
+<html>
+<body>
 
-	</tr>
-	<tr bgcolor="#A52A2A">
-		<td><b>Username</b></td>
-		<td><b>Password</b></td>
-		<td><b>Email</b></td>
-		<td><b>Name</b></td>
-		<td><b>Phone Number</b></td>
-	</tr>
-	<%
-		try {
-			connection = DriverManager.getConnection(connectionUrl + dbName, userId, password);
-			statement = connection.createStatement();
-			String sql = "SELECT * FROM Users";
+	<h1>Retrieve data from database in JSP</h1>
+	<table border="1">
+		<tr>
+			<td><b>Username</b></td>
+			<td><b>Password</b></td>
+			<td><b>Email</b></td>
+			<td><b>Name</b></td>
+			<td><b>Phone Number</b></td>
+		</tr>
+		<%
+			try {
+				connection = DriverManager.getConnection(connectionUrl + database, userid, password);
+				statement = connection.createStatement();
+				String sql = "select * from Users";
+				resultSet = statement.executeQuery(sql);
+				while (resultSet.next()) {
+		%>
+		<tr>
+			<td><%=resultSet.getString("username")%></td>
+			<td><%=resultSet.getString("pw")%></td>
+			<td><%=resultSet.getString("email")%></td>
+			<td><%=resultSet.getString("name")%></td>
+			<td><%=resultSet.getString("phone_number")%></td>
+		</tr>
+		<%
+			}
+				connection.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		%>
+	</table>
+</body>
+</html>
 
-			resultSet = statement.executeQuery(sql);
-			while (resultSet.next()) {
-	%>
-	<tr bgcolor="#DEB887">
 
-		<td><%=resultSet.getString("username")%></td>
-		<td><%=resultSet.getString("pw")%></td>
-		<td><%=resultSet.getString("email")%></td>
-		<td><%=resultSet.getString("name")%></td>
-		<td><%=resultSet.getString("phone_number")%></td>
-
-	</tr>
-
-	<%
-		}
-connection.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	%>
-</table>
 <%--
 <!DOCTYPE html>
 <html>
