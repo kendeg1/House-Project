@@ -30,7 +30,7 @@
 			<script type="text/javascript">
 				$(document).ready(function() {
 					$('#checker').click(function() {
-						checked = $("input[type=checkbox]:checked").length;
+						checked = $("input[type=radio]:checked").length;
 						if (!checked) {
 							alert("You must choose sell or rent.");
 							return false;
@@ -43,10 +43,10 @@
 	
 
 	<div id="buySell" class="text-center form-check" >
-			<input type="checkbox" id="buy" value="buy">Sell
-			<input type="checkbox" id="sell" value="rent">Rent
+			<input name = "selection" type="radio" id="buy" value="buy">Sell
+			<input name = "selection" type="radio" id="sell" value="rent">Rent
 			</div>
-			<div id=duration style="display:none"><p>Select Renting Duration</p>
+			<div id=duration ><p>If Renting, Select Renting Duration</p>
 					<label for="day">Days</label><select form="search" id="day" required>
 				      <option value="00">00</option>
 					  <option value="01">01</option>
@@ -110,13 +110,16 @@
 				<br>
 			<div id="listing_type" >
 				<label class="radio-inline">
-  				<input type="radio" name="inlineRadioOptions" id="apartment" value="option1" required>Apartment
+  				<input type="radio" name="inlineRadio" id="apartment" value="apartment" required>Apartment
 				</label>
 				<label class="radio-inline">
-  				<input type="radio" name="inlineRadioOptions" id="hotel" value="option2" required>Hotel
+  				<input type="radio" name="inlineRadio" id="hotel" value="hotel" required>Hotel
 				</label>
 				<label class="radio-inline">
-  				<input type="radio" name="inlineRadioOptions" id="room" value="option3" required>Room
+  				<input type="radio" name="inlineRadio" id="room" value="room" required>Room
+				</label>
+				<label class="radio-inline">
+  				<input type="radio" name="inlineRadio" id="house" value="house" required>House
 				</label>
 			</div>		
 			</div>
@@ -245,19 +248,8 @@
 				
 			</div>!  -->
 			
-			<div id="rating">
-				<h3>Seller Rating</h3><p>enter your rating</p>
-				<i class="glyphicon glyphicon-star"></i>
-				<label for="rating"></label><select name=rating form="search" id="rating" required>
-				
-					  <option value="01">1</option>
-  					  <option value="02">2</option>
-					  <option value="03">3</option>
-					  <option value="04">4</option>
-					  <option value="05">5</option>
-				</select>
-			</div>
-			<div class="col-md-4 text-center">
+			
+			<div class="col-md-4 text-center mb-3">
 			<button class="btn  btn-success active" id="checker" type="submit">Finish</button>
 			</div>	
 	</form>
