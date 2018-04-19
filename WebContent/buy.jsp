@@ -22,47 +22,6 @@
 %>
 <!DOCTYPE html>
 <html>
-<body>
-
-	<h1>Retrieve data from database in JSP</h1>
-	<table border="1">
-		<tr>
-			<td><b>Username</b></td>
-			<td><b>Password</b></td>
-			<td><b>Email</b></td>
-			<td><b>Name</b></td>
-			<td><b>Phone Number</b></td>
-		</tr>
-		<%
-			try {
-				connection = DriverManager.getConnection(connectionUrl + database, userid, password);
-				statement = connection.createStatement();
-				String sql = "select * from Users";
-				resultSet = statement.executeQuery(sql);
-				while (resultSet.next()) {
-		%>
-		<tr>
-			<td><%=resultSet.getString("username")%></td>
-			<td><%=resultSet.getString("password")%></td>
-			<td><%=resultSet.getString("email")%></td>
-			<td><%=resultSet.getString("name")%></td>
-			<td><%=resultSet.getString("phone_number")%></td>
-		</tr>
-		<%
-			}
-				connection.close();
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		%>
-	</table>
-</body>
-</html>
-
-
-<%--
-<!DOCTYPE html>
-<html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -79,7 +38,6 @@
 <link rel="stylesheet" type="text/css" href="buy.css">
 <title>Board</title>
 </head>
-
 <body>
 	<nav class="navbar navbar-default">
 		<div class="navbar-header">
@@ -110,29 +68,41 @@
 
 		</div>
 	</nav>
-	
+
 	<div class="container">
 		<div class="row">
 			<table class="table table-striped">
 				<thead>
 					<tr>
-						<th>Listing ID #</th>
-						<th>room_count</th>
-						<th>bathroom_count</th>
-						<th>condition</th>
-						<th>type</th>
+						<th>Username</th>
+						<th>Email</th>
+						<th>Name</th>
+						<th>Phone Number</th>
 					</tr>
 				</thead>
+				<%
+			try {
+				connection = DriverManager.getConnection(connectionUrl + database, userid, password);
+				statement = connection.createStatement();
+				String sql = "select * from Users";
+				resultSet = statement.executeQuery(sql);
+				while (resultSet.next()) {
+		%>
 				<tbody>
 					<tr>
-						<td>1</td>
-						<td>1000</td>
-						<td>2</td>
-						<td>3</td>
-						<td>14</td>
+						<td><%=resultSet.getString("username")%></td>
+						<td><%=resultSet.getString("email")%></td>
+						<td><%=resultSet.getString("name")%></td>
+						<td><%=resultSet.getString("phone_number")%></td>
 					</tr>
 				</tbody>
-				
+		<%
+			}
+				connection.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		%>
 			</table>
 			<a href="write.jsp" class="btn btn-primary pull-right">Post</a>
 		</div>
@@ -140,4 +110,5 @@
 
 </body>
 </html>
---%>
+
+
