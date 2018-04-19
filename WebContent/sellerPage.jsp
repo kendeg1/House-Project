@@ -26,7 +26,7 @@
 		<h1 id="title" class="text-center">Sell housing in New Brunswick</h1>
 		<p>Are you looking to sell or rent?</p>
 	
-	<form class="form-inline" id="search" method="get" action="createListing.jsp">
+	<form class="form-inline" id="search" method="post" action="createListing.jsp">
 			<script type="text/javascript">
 				$(document).ready(function() {
 					$('#checker').click(function() {
@@ -43,11 +43,11 @@
 	
 
 	<div id="buySell" class="text-center form-check" >
-			<input name = "selection" type="radio" id="buy" value="buy">Sell
-			<input name = "selection" type="radio" id="sell" value="rent">Rent
+			<input name = "selection" type="radio" id="sell" value="buy">Sell
+			<input name = "selection" type="radio" id="rent" value="rent">Rent
 			</div>
 			<div id=duration ><p>If Renting, Select Renting Duration</p>
-					<label for="day">Days</label><select form="search" id="day" required>
+					<label for="day">Days</label><select name="day" form="search" id="day" required>
 				      <option value="00">00</option>
 					  <option value="01">01</option>
   					  <option value="02">02</option>
@@ -82,7 +82,7 @@
 					  <option value="31">31</option>
 				</select>
 				
-				<label for="month">Months</label><select form="search" id="month" required>
+				<label for="month">Months</label><select name="month" form="search" id="month" required>
 					  <option value="00">00</option>
 					  <option value="01">01</option>
   					  <option value="02">02</option>
@@ -98,7 +98,7 @@
 					  <option value="12">12</option>
 				</select>
 				
-				<label for="year">Years</label><select form="search" id="year" required>
+				<label for="year">Years</label><select name="year" form="search" id="year" required>
 					  <option value="00">00</option>
 					  <option value="01">01</option>
   					  <option value="02">02</option>
@@ -110,16 +110,16 @@
 				<br>
 			<div id="listing_type" >
 				<label class="radio-inline">
-  				<input type="radio" name="inlineRadio" id="apartment" value="apartment" required>Apartment
+  				<input type="radio" name="listing_type" id="apartment" value="apartment" required>Apartment
 				</label>
 				<label class="radio-inline">
-  				<input type="radio" name="inlineRadio" id="hotel" value="hotel" required>Hotel
+  				<input type="radio" name="listing_type" id="hotel" value="hotel" required>Hotel
 				</label>
 				<label class="radio-inline">
-  				<input type="radio" name="inlineRadio" id="room" value="room" required>Room
+  				<input type="radio" name="listing_type" id="room" value="room" required>Room
 				</label>
 				<label class="radio-inline">
-  				<input type="radio" name="inlineRadio" id="house" value="house" required>House
+  				<input type="radio" name="listing_type" id="house" value="house" required>House
 				</label>
 			</div>		
 			</div>
@@ -136,9 +136,9 @@
 			<div id="homeAddress" class="form-group row">
   				<label for="homeAddress" class="col-2 col-form-label" required>Property Address</label>
   				<div class="col-10">
-    				<input type="text" class="form-control" id="address" placeholder="Enter Address" required>
-    				<input type="text" class="form-control" id="city" placeholder="Enter City" required>
-    				<input type="text" class="form-control" id="state" placeholder="Enter State" required>
+    				<input type="text" class="form-control" name="address" id="address" placeholder="Enter Address" required>
+    				<input type="text" class="form-control" name="city" id="city" placeholder="Enter City" required>
+    				<input type="text" class="form-control" name="state" id="state" placeholder="Enter State" required>
   				</div>
   			</div>
   			
@@ -164,7 +164,7 @@
 			
 			
 			<div id=bathrooms><p>Number of bathrooms</p>
-				<label name="bathroom_count"  for="bathrooms"></label><select name="bathrooms" form="search" id="bathroom_count" required>
+				<label name="bathroom_count"  for="bathrooms"></label><select name="bathroom_count" form="search" id="bathroom_count" required>
 					  <option value="00">00</option>
 					  <option value="01">01</option>
   					  <option value="02">02</option>
@@ -180,7 +180,7 @@
 			</div>
 			
 			<div id=guests><p>Number of guests</p>
-			<label for="guests"></label><select name=guests form="search" id="guest_count" required>
+			<label name="guests_count" for="guests"></label><select name="guests_count" form="search" id="guests_count" required>
 					  <option value="00">00</option>
 					  <option value="01">01</option>
   					  <option value="02">02</option>
@@ -199,25 +199,25 @@
 			<div id="amenities">
 			<h3>Amenities</h3>
 			<label class="checkbox-inline">
-  			<input type="checkbox" id="inlineCheckbox1" value="option1">Washer/Dryer
+  			<input type="checkbox" name="amenities" id="washer" value="option1">Washer/Dryer
 			</label>
 			<label class="checkbox-inline">
-  			<input type="checkbox" id="inlineCheckbox2" value="option2">Covered Parking
+  			<input type="checkbox" name="amenities" id="parking" value="option2">Covered Parking
 			</label>
 			<label class="checkbox-inline">
-  			<input type="checkbox" id="inlineCheckbox3" value="option3">Pet Friendly
+  			<input type="checkbox" name="amenities" id="pets" value="option3">Pet Friendly
 			</label>
 			<label class="checkbox-inline">
-  			<input type="checkbox" id="inlineCheckbox3" value="option3">Air-Conditioning
+  			<input type="checkbox" name="amenities" id="ac" value="option3">Air-Conditioning
 			</label>
 			<label class="checkbox-inline">
-  			<input type="checkbox" id="inlineCheckbox3" value="option3">Wifi/High-Speed Internet
+  			<input type="checkbox" name="amenities" id="wifi" value="option3">Wifi/High-Speed Internet
 			</label>
 			<label class="checkbox-inline">
-  			<input type="checkbox" id="inlineCheckbox2" value="option2">Gym
+  			<input type="checkbox" name="amenities" id="gym" value="option2">Gym
 			</label>
 			<label class="checkbox-inline">
-  			<input type="checkbox" id="inlineCheckbox2" value="option2">Gated Access
+  			<input type="checkbox" name="amenities" id="gate" value="option2">Gated Access
 			</label>
 			</div>
 			<br>
@@ -225,7 +225,7 @@
 			<div id="size" class="form-group row">
   				<label for="size" class="col-2 col-form-label" required><h3>Square Feet</h3></label>
   				<div class="col-10">
-    				<input type="text" class="form-control" id="size_square_feet" placeholder="Enter Size">
+    				<input name="size" type="text" class="form-control" id="size_square_feet" placeholder="Enter Size">
   				</div>
   			</div>
 			
@@ -233,13 +233,13 @@
 			<div id="cost" class="form-group row">
   				<label for="cost" class="col-2 col-form-label" required><h3>Price</h3></label>
   				<div class="col-10">
-    				<input type="text" class="form-control" id="cost" placeholder="Enter Price" required>
+    				<input type="text" name="cost" class="form-control" id="cost" placeholder="Enter Price" required>
   				</div>
   			</div>
 			<br><br>
 			<div id="notesBox" class="">
 			<label for="notesBox" class="col-2 col-form-label" required>Notes about<br> the property</label>
-			<textarea id="notes" style="width:50%" class="form-control" rows="3"></textarea>
+			<textarea id="notes" name="notes" style="width:50%" class="form-control" rows="3"></textarea>
 			</div>
 			<!--  <div id="crime" class="form-check form-check-inline">
 			<h3>Crime Rate</h3><p>Enter crime rate 1-10</p>
