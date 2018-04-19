@@ -122,12 +122,12 @@
 			</div>
 			<br>
 
-  			<div id="username" class="form-group row">
+  		<!--  	<div id="username" class="form-group row">
   				<label for="username" class="col-2 col-form-label" required>Username</label>
   				<div class="col-10">
     				<input type="text" class="form-control" id="username" placeholder="Enter Username">
   				</div>
-  			</div>
+  			</div> -->
 			<br>
 			
 			<div id="homeAddress" class="form-group row">

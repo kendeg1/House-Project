@@ -19,7 +19,7 @@
 			<img class="img-responsive img-rounded center-block" src = "https://charterforcompassion.org/images/menus/communities/84c552fd-6fbd-4a3d-9299-79060285dc89.jpg">
 			<br>
 			<div>
-				<button id="clickToProceed" class="btn btn-info active" type="submit"><h3>Click here to proceed to search page!</h3></button>
+				<button id="clickToProceed" class="btn btn-info active" type="submit"><h3 style="color:black !important">Click here to proceed to search page!</h3></button>
                 <script type="text/javascript">
                         document.getElementById("clickToProceed").onclick = function(){
                             location.href = 'searchHouse.jsp';
@@ -27,7 +27,7 @@
                 </script>
 			</div>
 			<div>
-				<button id="clickToProceedSell" class="btn btn-info active" type="submit"><h3>Click here to proceed to seller page!  </h3></button>
+				<button id="clickToProceedSell" class="btn btn-info active" type="submit"><h3 style="color:black !important">Click here to proceed to seller page!  </h3></button>
                 <script type="text/javascript">
                         document.getElementById("clickToProceedSell").onclick = function(){
                             location.href = 'sellerPage.jsp';
