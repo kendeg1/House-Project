@@ -8,11 +8,10 @@
 <%
 	String id = request.getParameter("userId");
 	String driverName = "com.mysql.jdbc.Driver";
-	String connectionUrl = "jdbc:mysql://cs336projectlogindb.cocvlvd1pff0.us-east-1.rds.amazonaws.com/cs336ProjectLoginDb?" +
-            "user=monkeyGroup&password=monkey123";
-	String dbName = "jsptutorials";
-	String userId = "root";
-	String password = "root";
+	String connectionUrl = "jdbc:mysql://cs336projectlogindb.cocvlvd1pff0.us-east-1.rds.amazonaws.com/cs336ProjectLoginDb?";
+	String dbName = "monkeyGroup";
+	String userId = "monkeyGroup";
+	String password = "monkey123";
 
 	try {
 		Class.forName(driverName);
@@ -25,7 +24,7 @@
 	ResultSet resultSet = null;
 %>
 <h2 align="center">
-	<font><strong>Retrieve data from database in jsp</strong></font>
+	<font><strong>Retrieve data from database in JSP</strong></font>
 </h2>
 <table align="center" cellpadding="5" cellspacing="5" border="1">
 	<tr>
