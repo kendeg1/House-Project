@@ -23,9 +23,9 @@
 				                                   "user=monkeyGroup&password=monkey123");
 		
 		
-		String listing_type,address,state,city,username,notes,duration,sellOrRent,cost;
-		Integer room_count, bathroom_count, guest_count, min_cost, max_cost,size_square_feet,rent_id,bed_count,amenity_id, listing_id;
-		Boolean sell,individualRooms;
+		String listing_type,address,state,city,username,notes,duration,sellOrRent,cost = null;
+		Integer room_count, bathroom_count, guest_count, min_cost, max_cost,size_square_feet,rent_id,bed_count,amenity_id, listing_id = 0;
+		Boolean sell,individualRooms = true;
 		if(request.getParameter("checker") != null){
 			//UX doesn't have to be in order of this, but this is the hierarchy of each table
 			//blank textbox
