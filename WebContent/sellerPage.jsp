@@ -124,16 +124,16 @@
 				<br>
 			<div id="listing_type" >
 				<label class="radio-inline">
-  				<input type="radio" name="listing_type" id="apartment" value="apartment" required>Apartment
+  				<input type="radio" name="listing_type" id="apartment" value="apartment">Apartment
 				</label>
 				<label class="radio-inline">
-  				<input type="radio" name="listing_type" id="hotel" value="hotel" required>Hotel
+  				<input type="radio" name="listing_type" id="hotel" value="hotel">Hotel
 				</label>
 				<label class="radio-inline">
-  				<input type="radio" name="listing_type" id="room" value="room" required>Room
+  				<input type="radio" name="listing_type" id="room" value="room">Room
 				</label>
 				<label class="radio-inline">
-  				<input type="radio" name="listing_type" id="house" value="house" required>House
+  				<input type="radio" name="listing_type" id="house" value="house">House
 				</label>
 			</div>		
 			</div>
