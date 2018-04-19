@@ -23,6 +23,7 @@
 				                                   "user=monkeyGroup&password=monkey123");
 		
 		
+<<<<<<< HEAD
 		String listing_type,address,state,city,username,notes,duration,sellOrRent,cost=null;
 		Integer room_count, bathroom_count, guest_count, min_cost, max_cost,size_square_feet,rent_id,bed_count,amenity_id, listing_id=-1;
 		Boolean sell,individualRooms=true;
@@ -41,6 +42,21 @@
 		result=query.executeQuery();
 		if(!result.next()){
 			str="INSERT INTO Sellers(username) VALUES (?)";
+=======
+		String listing_type,address,state,city,username,notes,duration,sellOrRent,cost = null;
+		Integer room_count, bathroom_count, guest_count, min_cost, max_cost,size_square_feet,rent_id,bed_count,amenity_id, listing_id = 0;
+		Boolean sell,individualRooms = true;
+		if(request.getParameter("checker") != null){
+			//UX doesn't have to be in order of this, but this is the hierarchy of each table
+			//blank textbox
+			address=request.getParameter("address");
+			state=request.getParameter("state");
+			city=request.getParameter("city");
+				//how do we store username?
+			username=(String) session.getAttribute("username");
+			String str="INSERT INTO Sellers(username) VALUES (?)";
+			PreparedStatement query = con.prepareStatement(str);
+>>>>>>> branch 'master' of https://github.com/oumoum2/House-Project.git
 			query.setString(1,username);
 			if(query.executeUpdate()==1){
 				System.out.println(str);
