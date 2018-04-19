@@ -54,7 +54,7 @@
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
 				<li><a href="searchHouse.jsp">Main</a></li>
-				<li class="active"><a href="userInfo.jsp">User Info</a></li>
+				<li class="active"><a href="board.jsp">Board</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
