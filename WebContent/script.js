@@ -14,3 +14,15 @@ $(document).ready(function(){
 
     });
 });*/
+
+$(document).ready(function() {
+   $('input[type="radio"]').click(function() {
+       if($(this).attr('id') == 'watch-me') {
+            $('#show-me').show();           
+       }
+
+       else {
+            $('#show-me').hide();   
+       }
+   });
+});

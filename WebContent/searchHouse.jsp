@@ -55,13 +55,27 @@
 					});
 				});
 			</script>
+			
+			<script>
+			$(document).ready(function() {
+				   $('input[name="selection"]').click(function() {
+				       if($(this).attr('id') == 'rent') {
+				            $('#duration').show();           
+				       }
+
+				       else {
+				            $('#duration').hide();   
+				       }
+				   });
+				});
+			</script>
 <!-- Login -->
 
 	<div id="buySell" class="text-center form-check" >
 			<input name="selection" type="radio" id="buy" value="buy">Buy
-			<input name="selection" type="radio" id="sell" value="rent">Rent
+			<input name="selection" type="radio" id="rent" value="rent">Rent
 			</div>
-			<div id=duration><p>If Renting, Select Renting Duration</p>
+			<div id=duration style="display:none"><p>If Renting, Select Renting Duration</p>
 					<label for="day">Days</label><select name="day" form="search" id="day" required>
 				      <option value="00">00</option>
 					  <option value="01">01</option>
