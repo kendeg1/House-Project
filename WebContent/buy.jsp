@@ -7,7 +7,7 @@
 <%
 	String id = request.getParameter("userid");
 	String driver = "com.mysql.jdbc.Driver";
-	String connectionUrl = "jdbc:mysql://cs336projectlogindb.cocvlvd1pff0.us-east-1.rds.amazonaws.com:3306/monkeyGroup";
+	String connectionUrl = "jdbc:mysql://cs336projectlogindb.cocvlvd1pff0.us-east-1.rds.amazonaws.com:3306/?user=monkeyGroup/";
 	String database = "monkeyGroup";
 	String userid = "monkeyGroup";
 	String password = "monkey123";
