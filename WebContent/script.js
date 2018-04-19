@@ -1,6 +1,3 @@
-/**
- * 
- */
 /*$('#mycheckbox').change(function(){
             if(this.checked) {
                 $("mycheckboxdiv").next().show();
@@ -17,4 +14,3 @@ $(document).ready(function(){
 
     });
 });*/
-
