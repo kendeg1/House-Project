@@ -34,6 +34,14 @@
                         };
                 </script>
 			</div>
+						<div>
+				<button id="clickToGoBoard" class="btn btn-info active" type="reset"><h3 style="color:black !important">Click here to proceed to Board page!  </h3></button>
+                <script type="text/javascript">
+                        document.getElementById("clickToProceedSell").onclick = function(){
+                            location.href = 'board.jsp';
+                        };
+                </script>
+			</div>
 			</form>	
 		</div>
 </body>
