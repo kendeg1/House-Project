@@ -89,9 +89,9 @@
 		%>
 				<tbody>
 					<tr>
-						<td><%=resultSet.getString("rend_id")%></td>
+						<td><%=resultSet.getString("rent_id")%></td>
 						<td><%=resultSet.getString("listing_id")%></td>
-						<td><%=resultSet.getString("listing type")%></td>
+						<td><%=resultSet.getString("listing_type")%></td>
 						<td><%=resultSet.getString("duration")%></td>
 					</tr>
 				</tbody>
