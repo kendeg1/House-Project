@@ -74,9 +74,11 @@
 			<table class="table table-striped">
 				<thead>
 					<tr>
+						<th><a href="rent.jsp">Rent Info</a></th>
+						<th><a href="seller.jsp">Seller Info</a></th>
+						<th><a href="crimeRate.jsp">Crime Rate Data</a></th>
 						<th><a href="userInfo.jsp">User Info</a></th>
 						<th><a href="sellerListings.jsp">Seller Listings</a></th>
-						<th><a href="crimeRate.jsp">Crime Rate</a></th>
 					</tr>
 				</thead>
 			</table>
