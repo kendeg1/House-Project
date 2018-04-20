@@ -36,7 +36,7 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" href="userInfo.css">
-<title>Crime Rate</title>
+<title>Rent</title>
 </head>
 <body>
 	<nav class="navbar navbar-default">
@@ -73,24 +73,26 @@
 			<table class="table table-striped">
 				<thead>
 					<tr>
-						<th>City</th>
-						<th>State</th>
-						<th>Rate</th>
+						<th>Rent ID</th>
+						<th>Listing ID</th>
+						<th>Listing Type</th>
+						<th>Duration</th>
 					</tr>
 				</thead>
 				<%
 			try {
 				connection = DriverManager.getConnection(connectionUrl + database, userid, password);
 				statement = connection.createStatement();
-				String sql = "select * from Crime_Rate";
+				String sql = "select * from Rent";
 				resultSet = statement.executeQuery(sql);
 				while (resultSet.next()) {
 		%>
 				<tbody>
 					<tr>
-						<td><%=resultSet.getString("city")%></td>
-						<td><%=resultSet.getString("state")%></td>
-						<td><%=resultSet.getString("rate")%></td>
+						<td><%=resultSet.getString("rend_id")%></td>
+						<td><%=resultSet.getString("listing_id")%></td>
+						<td><%=resultSet.getString("listing type")%></td>
+						<td><%=resultSet.getString("duration")%></td>
 					</tr>
 				</tbody>
 		<%
