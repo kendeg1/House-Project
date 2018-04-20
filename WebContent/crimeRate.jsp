@@ -101,7 +101,7 @@
 			}
 		%>
 			</table>
-			<a href="write.jsp" class="btn btn-primary pull-right">Post</a>
+			
 		</div>
 	</div>
 
