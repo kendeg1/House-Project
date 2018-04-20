@@ -35,8 +35,8 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link rel="stylesheet" type="text/css" href="board.css">
-<title>Board</title>
+<link rel="stylesheet" type="text/css" href="userInfo.css">
+<title>Seller Listings</title>
 </head>
 <body>
 	<nav class="navbar navbar-default">
@@ -47,8 +47,7 @@
 				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="searchHouse.jsp">Housing in New
-				Brunswick</a>
+			<a class="navbar-brand" href="searchHouse.jsp">Housing in New Brunswick</a>
 		</div>
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
@@ -74,11 +73,33 @@
 			<table class="table table-striped">
 				<thead>
 					<tr>
-						<th><a href="userInfo.jsp">User Info</a></th>
-						<th><a href="sellerListings.jsp">Seller Listings</a></th>
-						<th><a href="crimeRate.jsp">Crime Rate</a></th>
+						<th>City</th>
+						<th>State</th>
+						<th>Rate</th>
 					</tr>
 				</thead>
+				<%
+			try {
+				connection = DriverManager.getConnection(connectionUrl + database, userid, password);
+				statement = connection.createStatement();
+				String sql = "select * from Crime_Rate";
+				resultSet = statement.executeQuery(sql);
+				while (resultSet.next()) {
+		%>
+				<tbody>
+					<tr>
+						<td><%=resultSet.getString("city")%></td>
+						<td><%=resultSet.getString("state")%></td>
+						<td><%=resultSet.getString("rate")%></td>
+					</tr>
+				</tbody>
+		<%
+			}
+				connection.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		%>
 			</table>
 			<a href="write.jsp" class="btn btn-primary pull-right">Post</a>
 		</div>
