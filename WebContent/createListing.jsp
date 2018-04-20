@@ -13,6 +13,7 @@
 <%! //session
 	String dbUsername;
 	String dbPassword;
+	String[] amenities;
 %>
 <%
 	try {
@@ -23,8 +24,8 @@
 				                                   "user=monkeyGroup&password=monkey123");
 		
 		
-		String listing_type,address,state,city,username,notes,duration,sellOrRent,cost=null;
-		Integer room_count, bathroom_count, guest_count, min_cost, max_cost,size_square_feet,rent_id,bed_count,amenity_id, listing_id=-1;
+		String listing_type,address,state,city,username,notes,sellOrRent,cost=null;
+		Integer room_count, bathroom_count, guest_count, min_cost, max_cost,size_square_feet,rent_id=-1,bed_count,amenity_id, listing_id=-1,duration=0;
 		Boolean sell,individualRooms=true;
 		//UX doesn't have to be in order of this, but this is the hierarchy of each table
 		//blank textbox
@@ -50,6 +51,7 @@
 		} else {
 			System.out.println("user already in Sellers");
 		}
+		query.close();
 			//notes - not required
 		notes=request.getParameter("notes");
 		str="INSERT INTO Seller_Listings(address,state,city,username,notes) VALUES (?,?,?,?,?)";
@@ -85,8 +87,7 @@
 			System.out.print("listing failed: "+str);
 			System.exit(0);
 		}
-		
-		query=con.prepareStatement(str);
+		query.close();
 		//blank textbox
 		cost=request.getParameter("cost");
 		//dropdown menu:1-10
@@ -116,36 +117,50 @@
 			} else {
 				System.out.print("failed: "+str);
 			}
+			query.close();
 		} else {
 			//blank textbox (in days, can convert to mm/dd/yr on frontend); duration - not required
-			duration = request.getParameter("duration");
+			duration = Integer.parseInt(request.getParameter("day"));
+			duration+=Integer.parseInt(request.getParameter("month"))*30;
+			duration+=Integer.parseInt(request.getParameter("year"))*365;
 			//drop down menu - apartment, hotel, room
 			listing_type=request.getParameter("listing_type");
 			str="INSERT INTO Rent(listing_id,duration,listing_type) VALUES (?,?,?)";
 			query=con.prepareStatement(str);
 			query.setInt(1,listing_id);
-			query.setString(2,duration);
+			query.setInt(2,duration);
 			query.setString(3,listing_type);
 			if(query.executeUpdate()==1){
-				System.out.print(str);
+				query.close();
+				str="SELECT rent_id FROM Rent WHERE listing_id=? AND duration=? AND listing_type=? ORDER BY rent_id DESC";
+				query=con.prepareStatement(str);
+				query.setInt(1,listing_id);
+				query.setInt(2,duration);
+				query.setString(3,listing_type);
+				result=query.executeQuery();
+				if(result.next()){
+					rent_id=result.getInt("rent_id");
+					System.out.format("rent_id: %d\n",rent_id);
+				} else {
+					System.out.println("can't find rent_id");
+					System.exit(0);
+				}
+				System.out.println("inserted rent");
 			} else {
-				System.out.print("failed: "+str);
-			}
-			str="SELECT COUNT(rent_id) FROM Rent";
-			query=con.prepareStatement(str);
-			result=query.executeQuery();
-			rent_id=1;
-			if(result.next()){
-				rent_id=result.getInt("rent_id");
-			} else {
-				System.out.print("failed: "+str);
+				System.out.print("renting failed: "+str);
+				query.close();
 				System.exit(0);
 			}
+			query.close();
 			if(listing_type=="apartment"){
 				//dropdown menu:1-10
 				room_count=Integer.parseInt(request.getParameter("room_count"));
 				str="INSERT INTO Apartment_Number(rent_id,cost,room_count,bathroom_count,guest_count) VALUES (?,?,?,?,?)";
 				query=con.prepareStatement(str);
+				if(rent_id==-1){
+					System.out.println("rent id not found");
+					System.exit(0);
+				}
 				query.setInt(1,rent_id);
 				query.setString(2,cost);
 				query.setInt(3,room_count);
@@ -156,12 +171,17 @@
 				} else {
 					System.out.print("failed: "+str);
 				}
+				query.close();
 			} else {
 				//hotel and individual rooms
 				//dropdown menu:1-10
-				bed_count=Integer.parseInt(request.getParameter("bed_count"));
-				str="INSERT INTO Room_Number(rent_id,cost,bed_count,bathroom_count,guest_count) VALUES (?,?,?,?)";
+				bed_count=Integer.parseInt(request.getParameter("room_count"));
+				str="INSERT INTO Room_Number(rent_id,cost,bed_count,bathroom_count,guest_count) VALUES (?,?,?,?,?)";
 				query=con.prepareStatement(str);
+				if(rent_id==-1){
+					System.out.println("rent id not found");
+					System.exit(0);
+				}
 				query.setInt(1,rent_id);
 				query.setString(2,cost);
 				query.setInt(3,bed_count);
@@ -172,21 +192,28 @@
 				} else {
 					System.out.print("failed: "+str);
 				}
+				query.close();
 			}
 		}
-		//STILL WORKING ON THIS PART~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		//check boxes, into a vector, while loop through vector to add amenities
 		str="INSERT INTO Listing_Amenities(listing_id,amenity_id) VALUES (?,?)";
-		query=con.prepareStatement(str);
-		query.setInt(1,listing_id);
-		amenity_id=Integer.parseInt(request.getParameter("amenity_id"));
-		query.setInt(2,amenity_id);
-		if(query.executeUpdate()==1){
-			System.out.print(str);
-		} else {
-			System.out.print("failed: "+str);
+		amenities=request.getParameterValues("amenities");
+		if(amenities!=null){
+			for(int i=0;i<amenities.length;i++){
+				query=con.prepareStatement(str);
+				query.setInt(1,listing_id);
+				amenity_id=Integer.parseInt(amenities[i]);
+				query.setInt(2,amenity_id);
+				if(query.executeUpdate()==1){
+					System.out.print(str);
+				} else {
+					System.out.print("failed: "+str);
+				}
+				query.close();
+			}
 		}
-		query.close();
+		
+		
 	} catch (Exception ex) {
 		out.print(ex);
 		out.print("insert failed");

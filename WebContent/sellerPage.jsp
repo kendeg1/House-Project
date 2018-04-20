@@ -206,31 +206,25 @@
 			<div id="amenities">
 			<h3>Amenities</h3>
 				<label class="checkbox-inline">
-  					<input type="checkbox" name="amenities" id="washer" value="option1">Washer/Dryer
+  					<input type="checkbox" name="amenities" id="ac" value="1">Air-Conditioning
 				</label>
-			
 				<label class="checkbox-inline">
-  					<input type="checkbox" name="amenities" id="parking" value="option2">Covered Parking
+  					<input type="checkbox" name="amenities" id="heater" value="2">Heater
 				</label>
-			
 				<label class="checkbox-inline">
-  					<input type="checkbox" name="amenities" id="pets" value="option3">Pet Friendly
+  					<input type="checkbox" name="amenities" id="parking" value="3">Covered Parking
 				</label>
-			
 				<label class="checkbox-inline">
-  					<input type="checkbox" name="amenities" id="ac" value="option3">Air-Conditioning
+  					<input type="checkbox" name="amenities" id="wifi" value="4">Wifi/High-Speed Internet
 				</label>
-			
 				<label class="checkbox-inline">
-  					<input type="checkbox" name="amenities" id="wifi" value="option3">Wifi/High-Speed Internet
+  					<input type="checkbox" name="amenities" id="pets" value="5">Pet Friendly
 				</label>
-			
 				<label class="checkbox-inline">
-  					<input type="checkbox" name="amenities" id="gym" value="option2">Gym
+  					<input type="checkbox" name="amenities" id="washer" value="6">Washer
 				</label>
-			
 				<label class="checkbox-inline">
-  					<input type="checkbox" name="amenities" id="gate" value="option2">Gated Access
+  					<input type="checkbox" name="amenities" id="dryer" value="7">Dryer
 				</label>
 			</div>
 			<br>
