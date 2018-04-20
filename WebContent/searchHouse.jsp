@@ -24,7 +24,7 @@
   </ul>
 </div> 
 	
-	<form id="address" method="get" action="#">
+	<form id="address" method="get" action="board.jsp">
 	<div class="text-center">
 		<input id="searchbox" type="text" name="search" placeholder="Search An Address"><br>
 		<button class="btn btn-success active" id="address" type="submit">Search</button>
