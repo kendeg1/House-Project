@@ -47,7 +47,7 @@
 			<script type="text/javascript">
 				$(document).ready(function() {
 					$('#checker').click(function() {
-						checked = $("input[type=checkbox]:checked").length;
+						checked = $("input[type=radio]:checked").length;
 						if (!checked) {
 							alert("You must choose buy or rent.");
 							return false;
@@ -55,13 +55,27 @@
 					});
 				});
 			</script>
+			
+			<script>
+			$(document).ready(function() {
+				   $('input[name="selection"]').click(function() {
+				       if($(this).attr('id') == 'rent') {
+				            $('#duration').show();           
+				       }
+
+				       else {
+				            $('#duration').hide();   
+				       }
+				   });
+				});
+			</script>
 <!-- Login -->
 
 	<div id="buySell" class="text-center form-check" >
 			<input name="selection" type="radio" id="buy" value="buy">Buy
-			<input name="selection" type="radio" id="sell" value="rent">Rent
+			<input name="selection" type="radio" id="rent" value="rent">Rent
 			</div>
-			<div id=duration><p>If Renting, Select Renting Duration</p>
+			<div id=duration style="display:none"><p>If Renting, Select Renting Duration</p>
 					<label for="day">Days</label><select name="day" form="search" id="day" required>
 				      <option value="00">00</option>
 					  <option value="01">01</option>
@@ -124,16 +138,16 @@
 				
 				<div id="listing_type" >
 				<label class="radio-inline">
-  				<input type="radio" name="listing_type" id="apartment" value="apartment" required>Apartment
+  				<input type="radio" name="listing_type" id="apartment" value="apartment">Apartment
 				</label>
 				<label class="radio-inline">
-  				<input type="radio" name="listing_type" id="hotel" value="hotel" required>Hotel
+  				<input type="radio" name="listing_type" id="hotel" value="hotel">Hotel
 				</label>
 				<label class="radio-inline">
-  				<input type="radio" name="listing_type" id="room" value="room" required>Room
+  				<input type="radio" name="listing_type" id="room" value="room">Room
 				</label>
 				<label class="radio-inline">
-  				<input type="radio" name="listing_type" id="house" value="house" required>House
+  				<input type="radio" name="listing_type" id="house" value="house">House
 				</label>
 			</div>		
 				

@@ -39,6 +39,19 @@
 					});
 				});
 			</script>
+			<script>
+			$(document).ready(function() {
+				   $('input[name="selection"]').click(function() {
+				       if($(this).attr('id') == 'rent') {
+				            $('#duration').show();           
+				       }
+
+				       else {
+				            $('#duration').hide();   
+				       }
+				   });
+				});
+			</script>
 <!-- Login -->
 
 	
@@ -47,7 +60,7 @@
 			<input name = "selection" type="radio" id="sell" value="True">Sell
 			<input name = "selection" type="radio" id="rent" value="False">Rent
 			</div>
-			<div id=duration ><p>If Renting, Select Renting Duration</p>
+			<div id=duration style="display:none" ><p>If Renting, Select Renting Duration</p>
 					<label for="day">Days</label><select name="day" form="search" id="day" required>
 				      <option value="00">00</option>
 					  <option value="01">01</option>
@@ -111,16 +124,16 @@
 				<br>
 			<div id="listing_type" >
 				<label class="radio-inline">
-  				<input type="radio" name="listing_type" id="apartment" value="apartment" required>Apartment
+  				<input type="radio" name="listing_type" id="apartment" value="apartment">Apartment
 				</label>
 				<label class="radio-inline">
-  				<input type="radio" name="listing_type" id="hotel" value="hotel" required>Hotel
+  				<input type="radio" name="listing_type" id="hotel" value="hotel">Hotel
 				</label>
 				<label class="radio-inline">
-  				<input type="radio" name="listing_type" id="room" value="room" required>Room
+  				<input type="radio" name="listing_type" id="room" value="room">Room
 				</label>
 				<label class="radio-inline">
-  				<input type="radio" name="listing_type" id="house" value="house" required>House
+  				<input type="radio" name="listing_type" id="house" value="house">House
 				</label>
 			</div>		
 			</div>
@@ -193,31 +206,25 @@
 			<div id="amenities">
 			<h3>Amenities</h3>
 				<label class="checkbox-inline">
-  					<input type="checkbox" name="amenities" id="washer" value="option1">Washer/Dryer
+  					<input type="checkbox" name="amenities" id="ac" value="1">Air-Conditioning
 				</label>
-			
 				<label class="checkbox-inline">
-  					<input type="checkbox" name="amenities" id="parking" value="option2">Covered Parking
+  					<input type="checkbox" name="amenities" id="heater" value="2">Heater
 				</label>
-			
 				<label class="checkbox-inline">
-  					<input type="checkbox" name="amenities" id="pets" value="option3">Pet Friendly
+  					<input type="checkbox" name="amenities" id="parking" value="3">Covered Parking
 				</label>
-			
 				<label class="checkbox-inline">
-  					<input type="checkbox" name="amenities" id="ac" value="option3">Air-Conditioning
+  					<input type="checkbox" name="amenities" id="wifi" value="4">Wifi/High-Speed Internet
 				</label>
-			
 				<label class="checkbox-inline">
-  					<input type="checkbox" name="amenities" id="wifi" value="option3">Wifi/High-Speed Internet
+  					<input type="checkbox" name="amenities" id="pets" value="5">Pet Friendly
 				</label>
-			
 				<label class="checkbox-inline">
-  					<input type="checkbox" name="amenities" id="gym" value="option2">Gym
+  					<input type="checkbox" name="amenities" id="washer" value="6">Washer
 				</label>
-			
 				<label class="checkbox-inline">
-  					<input type="checkbox" name="amenities" id="gate" value="option2">Gated Access
+  					<input type="checkbox" name="amenities" id="dryer" value="7">Dryer
 				</label>
 			</div>
 			<br>
